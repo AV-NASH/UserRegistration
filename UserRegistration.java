@@ -13,9 +13,10 @@ public class UserRegistration {
 
 	private static void userInterface() {
 		String firstname = checkFirstName();
-		String lastname=checkLastName();
-		String email=checkEmailAddress();
-		String phonenumber=checkPhoneNumber();
+		String lastname = checkLastName();
+		String email = checkEmailAddress();
+		String phonenumber = checkPhoneNumber();
+		String password = checkPassword();
 	}
 
 	private static String checkFirstName() {
@@ -62,7 +63,7 @@ public class UserRegistration {
 		return email;
 
 	}
-	
+
 	private static String checkPhoneNumber() {
 		String phonenumber;
 		boolean check;
@@ -75,7 +76,7 @@ public class UserRegistration {
 		} while (!check);
 		return phonenumber;
 	}
-	
+
 	private static String checkPassword() {
 		String password;
 		boolean check;
