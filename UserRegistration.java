@@ -12,10 +12,10 @@ public class UserRegistration {
 	}
 
 	private static void userInterface() {
-		//String firstname = checkFirstName();
-		//String lastname = checkLastName();
-		//String email = checkEmailAddress();
-		//String phonenumber = checkPhoneNumber();
+		String firstname = checkFirstName();
+		String lastname = checkLastName();
+		String email = checkEmailAddress();
+		String phonenumber = checkPhoneNumber();
 		String password = checkPassword();
 	}
 
@@ -83,7 +83,7 @@ public class UserRegistration {
 		do {
 			System.out.println("enter password");
 			password = scanner.nextLine();
-			check = Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])[a-zA-Z0-9]{8,}", password);
+			check = Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*-])[a-zA-Z0-9!@#$%6&*-]{8,}", password);
 			if (!check)
 				System.out.println("Invalid name please enter valid password");
 		} while (!check);
