@@ -12,9 +12,10 @@ public class UserRegistration {
 	}
 
 	private static void userInterface() {
-		String firstname = checkFirstName();
-		String lastname=checkLastName();
-		String email=checkEmailAddress();
+		//String firstname = checkFirstName();
+		//String lastname=checkLastName();
+		//String email=checkEmailAddress();
+		checkPhoneNumber();
 	}
 
 	private static String checkFirstName() {
@@ -60,5 +61,18 @@ public class UserRegistration {
 		} while (!check);
 		return email;
 
+	}
+	
+	private static String checkPhoneNumber() {
+		String phonenumber;
+		boolean check;
+		do {
+			System.out.println("enter phone number");
+			phonenumber = scanner.nextLine();
+			check = Pattern.matches("^[0-9]{2}+[ ]{1}+[0-9]{10}", phonenumber);
+			if (!check)
+				System.out.println("Invalid name please enter phone number");
+		} while (!check);
+		return phonenumber;
 	}
 }
