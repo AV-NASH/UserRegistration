@@ -13,6 +13,7 @@ public class UserRegistration {
 
 	private static void userInterface() {
 		String firstname = checkFirstName();
+		String lastname=checkLastName();
 	}
 
 	private static String checkFirstName() {
@@ -26,6 +27,20 @@ public class UserRegistration {
 				System.out.println("Invalid name please enter valid name");
 		} while (!check);
 		return firstname;
+
+	}
+	
+	private static String checkLastName() {
+		String lastname;
+		boolean check;
+		do {
+			System.out.println("enter last name");
+			lastname = scanner.nextLine();
+			check = Pattern.matches("(^[A-Z])([a-zA-Z]{3})", lastname);
+			if (!check)
+				System.out.println("Invalid name please enter valid name");
+		} while (!check);
+		return lastname;
 
 	}
 }
