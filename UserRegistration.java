@@ -83,7 +83,7 @@ public class UserRegistration {
 		do {
 			System.out.println("enter password");
 			password = scanner.nextLine();
-			check = Pattern.matches("[a-zA-Z0-9]{8,}", password);
+			check = Pattern.matches("(?=.*?[A-Z])[a-zA-Z0-9]{8,}", password);
 			if (!check)
 				System.out.println("Invalid name please enter valid password");
 		} while (!check);
