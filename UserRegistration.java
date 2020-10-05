@@ -17,6 +17,7 @@ public class UserRegistration {
 		String email = checkEmailAddress();
 		String phonenumber = checkPhoneNumber();
 		String password = checkPassword();
+		System.out.println("Thank you for registrations");
 	}
 
 	private static String checkFirstName() {
@@ -55,7 +56,7 @@ public class UserRegistration {
 			email = scanner.nextLine();
 
 			check = Pattern.matches(
-					"^[_a-zA-z0-9]+([\\+-\\.]{1}+[_a-zA-z0-9]+)*[@]{1}+[_a-zA-z0-9]+[\\.]{1}+[_a-zA-z0-9]{2,}+([\\.]{1}+[a-zA-z]{2}+)*$",
+					"^[_a-zA-z0-9]+([\\-\\.]{1}+[_a-zA-z0-9]+)*[@]{1}+[_a-zA-z0-9]+[\\.]{1}+[_a-zA-z0-9]{2,}+([\\.]{1}+[a-zA-z]{2}+)*$",
 					email);
 			if (!check)
 				System.out.println("Invalid name please enter valid email");
@@ -83,7 +84,7 @@ public class UserRegistration {
 		do {
 			System.out.println("enter password");
 			password = scanner.nextLine();
-			check = Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*-])[a-zA-Z0-9!@#$%6&*-]{8,}", password);
+			check = Pattern.matches("(?=.*?[A-Z])(?=.*?[0-9])(?=[^!@#$%^&*-]*[!@#$%^&*-][^!@#$%^&*-]*$)[a-zA-Z0-9!@#$%6&*-]{8,}", password);
 			if (!check)
 				System.out.println("Invalid name please enter valid password");
 		} while (!check);
